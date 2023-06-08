@@ -1,0 +1,96 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "": {
+            "type": "string"
+        },
+        "$schema": {
+            "type": "string"
+        },
+        "id": {
+            "type": "string"
+        },
+        "type": {
+            "type": "string"
+        },
+        "namespace": {
+            "type": "string"
+        },
+        "title": {
+            "type": "string"
+        },
+        "comment": {
+            "type": "string"
+        },
+        "timestamp": {
+            "type": "string"
+        },
+        "user": {
+            "type": "string"
+        },
+        "bot": {
+            "type": "string"
+        },
+        "minor": {
+            "type": "string"
+        },
+        "patrolled": {
+            "type": "string"
+        },
+        "server_url": {
+            "type": "string"
+        },
+        "server_name": {
+            "type": "string"
+        },
+        "server_script_path": {
+            "type": "string"
+        },
+        "wiki": {
+            "type": "string"
+        },
+        "parsedcomment": {
+            "type": "string"
+        },
+        "meta_domain": {
+            "type": "string"
+        },
+        "meta_uri": {
+            "type": "string"
+        },
+        "meta_request_id": {
+            "type": "string"
+        },
+        "meta_stream": {
+            "type": "string"
+        },
+        "meta_topic": {
+            "type": "string"
+        },
+        "meta_dt": {
+            "type": "string"
+        },
+        "meta_partition": {
+            "type": "string"
+        },
+        "meta_offset": {
+            "type": "string"
+        },
+        "meta_id": {
+            "type": "string"
+        },
+        "length_old": {
+            "type": "string"
+        },
+        "length_new": {
+            "type": "string"
+        },
+        "revision_old": {
+            "type": "string"
+        },
+        "revision_new": {
+            "type": "string"
+        }
+    }
+}
