@@ -138,9 +138,9 @@ class LandingZoneProducer:
 
                 print("Sleeping for {} seconds".format(sleep))
 
-    def setup(self):
+    def run(self):
         """
-        setup Sets up the producer
+        run Sets up the producer
         """
         # Create the producer
         self.create_producer()
@@ -157,7 +157,7 @@ class LandingZoneProducer:
 if __name__ == "__main__":
     landing_zone = LandingZoneProducer()
     try:
-        landing_zone.setup()
+        landing_zone.run()
     except KeyboardInterrupt:
         landing_zone.logger.info("%% Aborted by user")
     except Exception as e:
