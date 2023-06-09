@@ -11,14 +11,15 @@ Der Kafka Consumer ließt die Daten (Wikipedia Changes) aus der Datei `kafka_con
 1. Installiere Docker
 2. Installiere Python 3.11
 3. Directory Wechseln: `cd kafka_producer`
-4. Virtual Env erstellen: `python3 -m venv kafka_consumer_venv`
-5. Virtual Env aktivieren: `source kafka_consumer_venv/bin/activate`
-6. Installiere die benötigten Python Pakete: `pip install -r requirements.txt`
+4. Virtual Env erstellen: `python -m venv .kafka_producer_venv`
+5. Virtual Env aktivieren: `source .kafka_producer_venv/bin/activate` oder `source .kafka_producer_venv/Scripts/activate`
+6. Installiere die benötigten Python Pakete: `pip3 install -r requirements.txt`
+7. (Optional) Deaktivieren der Virtual Env: `deactivate`
 
 ### Lokale Verwendung
 
 1. Starte den Kafka-Broker and Zookeeper mit `docker-compose up -d`
-2. Starte den Kafka Consumer mit `python kafka_consumer.py`
+2. Starte den Kafka Consumer mit `python src/kafka_consumer.py`
 
 > Jede Nachricht wird in der Konsole ausgegeben. Die zufällige Wartezeit zwischen den Nachrichten wird auch ausgegeben.
 
