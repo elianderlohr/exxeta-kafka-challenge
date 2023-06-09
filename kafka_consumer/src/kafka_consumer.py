@@ -178,5 +178,5 @@ class KafkaConsumer:
 
 
 if __name__ == "__main__":
-    consumer = Kafka()
+    consumer = KafkaConsumer()
     consumer.run()
