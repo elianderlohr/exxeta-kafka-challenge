@@ -9,3 +9,6 @@ __pycache__
 .ipynb_checkpoints
 /*/.ipynb_checkpoints
 /**/.ipynb_checkpoints
+
+kafka_producer/.kafka_producer_venv
+kafka_consumer/.kafka_consumer_venv
