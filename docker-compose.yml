@@ -42,8 +42,8 @@ services:
         aliases:
           - broker
 
-  ingestion:
-    container_name: ingestion
+  landing:
+    container_name: landing
     build:
       context: .
       dockerfile: landing/Dockerfile
@@ -59,7 +59,7 @@ services:
       dockerfile: structured/Dockerfile
     depends_on:
       - broker
-      - ingestion
+      - landing
     networks:
       - kafka_network
 
