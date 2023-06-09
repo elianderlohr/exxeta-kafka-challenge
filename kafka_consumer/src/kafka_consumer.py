@@ -10,7 +10,7 @@ import sys
 load_dotenv(override=False)
 
 
-class StructuredZoneConsumer:
+class KafkaConsumer:
     # global vars
     german_edits = 0
     global_edits = 0
@@ -178,5 +178,5 @@ class StructuredZoneConsumer:
 
 
 if __name__ == "__main__":
-    consumer = StructuredZoneConsumer()
+    consumer = Kafka()
     consumer.run()

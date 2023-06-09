@@ -2,12 +2,11 @@ import pytest
 import os
 import csv
 from unittest import mock
-from confluent_kafka import Consumer
-from src.structured import StructuredZoneConsumer
+from src.kafka_consumer import KafkaConsumer
 
 
 def test_write_aggregations_to_file(mocker):
-    consumer = StructuredZoneConsumer()
+    consumer = KafkaConsumer()
 
     file_path = "test.csv"
     mocker.patch.dict(os.environ, {"AGGREGATION_FILE_PATH": file_path})
@@ -46,7 +45,7 @@ def test_write_aggregations_to_file(mocker):
 
 
 def test_process_message():
-    consumer = StructuredZoneConsumer()
+    consumer = KafkaConsumer()
 
     message = mock.Mock()
     message.topic.return_value = "wikipedia-success"
@@ -65,7 +64,7 @@ def test_process_message():
 
 
 def test_calculate_aggregations(mocker):
-    consumer = StructuredZoneConsumer()
+    consumer = KafkaConsumer()
 
     mocker.patch("time.time", return_value=100)
     consumer.start_time = 0

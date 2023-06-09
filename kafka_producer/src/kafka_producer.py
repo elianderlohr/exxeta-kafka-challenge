@@ -13,7 +13,7 @@ from libs.helper import load_schema, check_schema, encode_failed
 from dotenv import load_dotenv
 
 
-class LandingZoneProducer:
+class KafkaProducer:
     # producer
     producer: Producer = None
 
@@ -155,7 +155,7 @@ class LandingZoneProducer:
 
 
 if __name__ == "__main__":
-    landing_zone = LandingZoneProducer()
+    landing_zone = KafkaProducer()
     try:
         landing_zone.run()
     except KeyboardInterrupt:

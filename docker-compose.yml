@@ -35,31 +35,30 @@ services:
       KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
       KAFKA_JMX_PORT: 9101
       KAFKA_JMX_HOSTNAME: localhost
-      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
-      ALLOW_PLAINTEXT_LISTENER: "yes"
+      # ALLOW_PLAINTEXT_LISTENER: "yes"
     networks:
       kafka_network:
         aliases:
           - broker
 
-  landing:
-    container_name: landing
+  producer:
+    container_name: producer
     build:
       context: .
-      dockerfile: landing/Dockerfile
+      dockerfile: producer/Dockerfile
     depends_on:
       - broker
     networks:
       - kafka_network
 
-  structured:
-    container_name: structured
+  consumer:
+    container_name: consumer
     build:
       context: .
-      dockerfile: structured/Dockerfile
+      dockerfile: consumer/Dockerfile
     depends_on:
       - broker
-      - landing
+      - producer
     networks:
       - kafka_network
 

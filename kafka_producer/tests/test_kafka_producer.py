@@ -5,7 +5,7 @@ from confluent_kafka import Consumer
 
 # add the src directory to the path
 sys.path.append("src")
-from src.landing import LandingZoneProducer
+from src.kafka_producer import KafkaProducer
 
 
 def test_produce_message():
@@ -15,7 +15,7 @@ def test_produce_message():
     """
 
     # create a producer
-    landing_zone = LandingZoneProducer(dotenv_path="tests/.env")
+    landing_zone = KafkaProducer(dotenv_path="tests/.env")
 
     # create a producer
     landing_zone.create_producer()
@@ -34,7 +34,7 @@ def test_produce_csv_messages():
     """
 
     # create a producer
-    landing_zone = LandingZoneProducer(dotenv_path="tests/.env")
+    landing_zone = KafkaProducer(dotenv_path="tests/.env")
 
     # create a producer
     landing_zone.create_producer()
@@ -76,7 +76,7 @@ def test_produce_csv_message_error_message():
     """
 
     # create a producer
-    landing_zone = LandingZoneProducer(dotenv_path="tests/.env")
+    landing_zone = KafkaProducer(dotenv_path="tests/.env")
 
     # create a producer
     landing_zone.create_producer()
