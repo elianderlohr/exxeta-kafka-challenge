@@ -42,7 +42,7 @@ Entwicklung eines Kafka-Producers und Kafka-Consumers welche mock Wikipedia Date
 - Cassandra opfert strenge Konsistenz zugunsten von hoher Verfügbarkeit und Partitionstoleranz
 - Scanning von Daten wenn der PK nicht bekannt ist ist sehr langsam
 
-> Joins sind nicht nötig da die Daten in einer Tabelle liegen. Konsistenz ist auch nicht relevant da die Anwendung aktuell zur exploration genutzt werden soll (inkonsistente Daten sind also kein Problem).
+> Joins sind nicht nötig da die Daten in einer Tabelle liegen. Konsistenz ist auch nicht relevant da die Anwendung aktuell zur exploration genutzt werden soll (inkonsistens zwischen consumern sind also kein Problem).
 
 ### **Frage 2**: _Welches Datenmodell wäre deiner Meinung nach sinnvoll zur Ablage der Events_
 
