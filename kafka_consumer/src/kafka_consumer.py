@@ -118,6 +118,7 @@ class KafkaConsumer:
             self.write_aggregations_to_file(
                 global_edits_per_minute, german_edits_per_minute
             )
+            
 
             # Reset counters and start time
             self.global_edits = 0
