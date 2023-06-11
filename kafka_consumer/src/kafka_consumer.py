@@ -125,7 +125,9 @@ class KafkaConsumer:
             self.start_time = time.time()
 
             return global_edits_per_minute, german_edits_per_minute
-        return None, None
+        else:
+            # Return 0 edits per minute if no new messages are received
+            return 0, 0
 
     def consume_messages(self):
         """
@@ -142,9 +144,12 @@ class KafkaConsumer:
             # Consume messages
             while True:
                 msg = self.consumer.poll(
-                    timeout=-1
-                )  # -1 = no timeout - for this use case acceptable
+                    timeout=1
+                )  # 1 = max 1 second timeout  > wait max 1 second for new messages before continuing
+                
                 if msg is None:
+                    # No new messages received, calculate aggregations and return 0 if necessary
+                    self.calculate_aggregations()
                     continue
                 if msg.error():
                     self.logger.error("Error: {}".format(msg.error()))
