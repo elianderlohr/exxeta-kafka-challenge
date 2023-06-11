@@ -14,7 +14,19 @@ Der Kafka Consumer subscribed zwei topics (`wikipedia-success` und `wikipedia-de
 4. Virtual Env erstellen: `python -m venv .kafka_consumer_venv`
 5. Virtual Env aktivieren: `source .kafka_consumer_venv/bin/activate` oder `source .kafka_consumer_venv/Scripts/activate`
 6. Installiere die benötigten Python Pakete: `pip3 install -r requirements.txt`
-7. (Optional) Deaktivieren der Virtual Env: `deactivate`
+7. .env file im root directory /kafka_consumer/.env erstellen mit folgendem Inhalt:
+
+```bash
+# Set environment variables
+LOG_FILE_PATH = logs/structured.log
+
+AGGREGATION_FILE_PATH = output/aggregation.csv
+
+# kafka
+KAFKA_BOOTSTRAP_SERVERS = localhost:9092
+```
+
+8. (Optional) Deaktivieren der Virtual Env: `deactivate`
 
 ### Lokale Verwendung
 
