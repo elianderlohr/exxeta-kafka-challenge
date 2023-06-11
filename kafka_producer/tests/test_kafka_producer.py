@@ -95,6 +95,7 @@ def test_produce_csv_message_error_message():
             "auto.offset.reset": "earliest",
         }
     )
+    
 
     expected_topics = [
         "wikipedia-success",
