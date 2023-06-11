@@ -2,8 +2,8 @@ name: Run consumer tests
 on:
   pull_request:
     branches: [master]
-  # push:
-  #  branches: [master]
+  push:
+    branches: [master]
   #  paths:
   #    - kafka_consumer/**
 
