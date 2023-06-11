@@ -30,9 +30,11 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd kafka_consumer && python -m pip install --upgrade pip
-          cd kafka_consumer && pip install -r requirements.txt
-          cd kafka_consumer && pip install -e .
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install -e .
+        working-directory: ./kafka_consumer
 
       - name: Run unit tests
-        run: cd kafka_consumer && python -m pytest --import-mode=append tests/
+        run: python -m pytest --import-mode=append tests/
+        working-directory: ./kafka_consumer
