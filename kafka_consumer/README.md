@@ -28,3 +28,8 @@ Durch das ausführen der docker-compose file wird automatisch auch der Kafka Con
 ### Tests
 
 Die Tests für den Kafka Consumer liegen im [/tests](kafka_consumer\tests) directory und können mit `pytest` ausgeführt werden.
+
+```bash
+cd kafka_consumer
+pytest
+```
