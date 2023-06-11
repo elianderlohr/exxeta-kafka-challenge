@@ -10,5 +10,10 @@ __pycache__
 /*/.ipynb_checkpoints
 /**/.ipynb_checkpoints
 
+kafka_consumer/.pytest_cache
+kafka_producer/.pytest_cache
+
 kafka_producer/.kafka_producer_venv
 kafka_consumer/.kafka_consumer_venv
+
+kafka_consumer/output/aggregation.csv
