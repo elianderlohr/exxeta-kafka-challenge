@@ -9,7 +9,6 @@ import sys
 # Load environment variables, ensure NO override of system variables
 load_dotenv(override=False)
 
-
 class KafkaConsumer:
     # global vars
     german_edits = 0
@@ -118,7 +117,7 @@ class KafkaConsumer:
             self.write_aggregations_to_file(
                 global_edits_per_minute, german_edits_per_minute
             )
-            
+
 
             # Reset counters and start time
             self.global_edits = 0
