@@ -9,6 +9,7 @@ import sys
 # Load environment variables, ensure NO override of system variables
 load_dotenv(override=False)
 
+
 class KafkaConsumer:
     # global vars
     german_edits = 0
