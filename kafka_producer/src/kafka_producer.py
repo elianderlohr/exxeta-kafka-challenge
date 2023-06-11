@@ -137,6 +137,9 @@ class KafkaProducer:
                 time.sleep(sleep)
 
                 print("Sleeping for {} seconds".format(sleep))
+        
+        print()
+        print("Finished producing messages. Shutting down producer...")
 
     def run(self):
         """
