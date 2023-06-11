@@ -138,6 +138,7 @@ class KafkaProducer:
 
                 print("Sleeping for {} seconds".format(sleep))
         
+        
         print()
         print("Finished producing messages. Shutting down producer...")
 
