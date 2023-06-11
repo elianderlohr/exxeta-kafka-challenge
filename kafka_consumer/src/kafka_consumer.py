@@ -26,7 +26,6 @@ class KafkaConsumer:
 
         self.logger = logging.getLogger()
         self.logger.setLevel(logging.INFO)
-
         
         # Setup Kafka Consumer
         print("Trying to setup Kafka Consumer...")
