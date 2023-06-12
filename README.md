@@ -46,7 +46,7 @@ Entwicklung eines Kafka-Producers und Kafka-Consumers welche mock Wikipedia Date
 
 ### **Frage 2**: _Welches Datenmodell wäre deiner Meinung nach sinnvoll zur Ablage der Events_
 
-Die Changes Events sollten in einer Wide-Column Row gespeichert werden. Sonst sollen alle Attribute (ingesamt 30) als column namen verwendet werden. Alle Events sollen in einer Tabelle gespeichert werden. Neben den Wikipedia Attributen können noch weitere Meta-Daten wie `insert_timestamp` gesammelt werden.
+Die Changes Events sollten in einer Wide-Column Row gespeichert werden. Sonst sollen alle Attribute der Wikipedia Changes (ingesamt 30) als column Namen verwendet werden. Alle Events sollen in einer Tabelle gespeichert werden. Neben den Wikipedia Attributen können noch weitere Meta-Daten wie `insert_timestamp` gesammelt werden.
 
 **Partition Key:**
 
