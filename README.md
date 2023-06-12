@@ -46,14 +46,14 @@ Entwicklung eines Kafka-Producers und Kafka-Consumers welche mock Wikipedia Date
 
 ### **Frage 2**: _Welches Datenmodell wäre deiner Meinung nach sinnvoll zur Ablage der Events_
 
-Die Changes Events sollten in einer Wide-Column Row gespeichert werden. Sonst sollen alle Attribute (ingesamt 30) als column namen verwendet werden. Alle Events sollen in einer Tabelle gespeichert werden.
+Die Changes Events sollten in einer Wide-Column Row gespeichert werden. Sonst sollen alle Attribute (ingesamt 30) als column namen verwendet werden. Alle Events sollen in einer Tabelle gespeichert werden. Neben den Wikipedia Attributen können noch weitere Meta-Daten wie `insert_timestamp` gesammelt werden.
 
 **Partition Key:**
 
 - `wiki` (z.B. enwiki)
 - `bot` (bot oder kein bot)
 
-Beide Keys sind als Composite Partition Key nützlich um queries auf ein bestimmtes wiki oder auf alle wikis zu ermöglichen. Außerdem ist es nützlich zwischen bot und nicht bot edits zu unterscheiden.
+Beide Keys sind als Composite Partition Key nützlich um queries auf ein bestimmtes wiki oder auf alle wikis zu ermöglichen. Außerdem ist es nützlich zwischen bot und nicht bot edits zu unterscheiden (Da änderungen von bots meistens nicht relevant sind - möglicherweise auch keine "Trends" aufzeigen).
 
 **Clustering Key:**
 
@@ -68,12 +68,18 @@ Mein Vorschlag wäre das ein topic welches alle Changes empfängt und weitere to
 
 **Vorteile:**
 
-- Bereits nach Wiki partitioniert
+- Daten sind bereits nach Wiki partitioniert
+  - Einfache Aggregationen möglich (z.B. Anzahl der Changes pro Wiki)
+  - Uninteressante Wikis können einfach ignoriert werden
+- Consumer können sich auf ein Wiki spezialisieren
+  - Jedes Wiki Topic kann getrennt skaliert werden, abhängig von den Anforderungen
 
 **Nachteile:**
 
 - Viele Topics erzeugen Overhead (Partitionierung nötig)
 - Daten werden getrennt gesendet aber in einer gemeinsamen Tabelle gesammelt
+- Wiki Changes sind nicht gleichmäßig verteilt (z.B. enwiki hat 1.5 mio changes pro tag, dewiki hat 800k changes pro tag)
+- Daten werden doppelt gesendet (einmal im global changes und einmal im wiki changes topic) -> falls auf global changes verzichtet wird besteht das problem das man die Daten wieder zusammen führen muss
 
 ## 2. Daten
 
